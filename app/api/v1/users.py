@@ -25,7 +25,7 @@ async def register(user: UserCreate):
     "/users",
     response_model=List[User],
     name="get users",
-    # dependencies=[Depends(get_current_user)],
+    dependencies=[Depends(get_current_user)],
 )
 async def get_users():
     users: List[User] = await engine.find(User)
