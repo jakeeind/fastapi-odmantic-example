@@ -1,4 +1,4 @@
-# FastAPI-ODMantic-Eample
+# FastAPI-ODMantic-Example
 Example using FastAPI with ODMantic (MongoDB)
 ```
 poetry install
