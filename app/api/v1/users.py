@@ -1,11 +1,10 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
-from app.core.db import init_mongo_engine
+from app.core.db import engine
 from app.core.depends import get_current_user
 from app.schemas.users import User, UserCreate
 
 router = APIRouter(prefix="/users", tags=["User"])
-engine = init_mongo_engine()
 
 
 @router.post("/register", response_model=User, name="create user")

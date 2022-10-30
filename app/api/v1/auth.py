@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException, Depends
-from app.core.db import init_mongo_engine
+from app.core.db import engine
 from app.schemas.users import User, TokenSchema
 from fastapi.security import (
     OAuth2PasswordRequestForm,
@@ -9,7 +9,6 @@ from app.settings import get_app_settings
 
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
-engine = init_mongo_engine()
 settings = get_app_settings()
 
 

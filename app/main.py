@@ -18,6 +18,7 @@ def init_app() -> FastAPI:
         allow_headers=["*"],
     )
     register_routers(app, root=settings.ROUTER_ROOT)
+    init_mongo_engine()
 
     @app.get("/")
     def health() -> Dict[str, Any]:
